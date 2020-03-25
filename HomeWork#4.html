@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+	
+    <title>Home Work #456</title>
+	
+	<style>
+		.mystyle{
+	     color:blue; }
+
+	</style>
+	
+	</head>
+ 
+<body>
+    
+       <h2 id="par"> A paragraph (from the Ancient Greek παράγραφος paragraphos, "to write beside" or "written beside") 
+	is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists 
+	of one or more sentences.[1] Though not required by the syntax of any language, 
+	paragraphs are usually an expected part of formal writing, used to organize longer prose.     </h2>
+	
+    <button onclick="changeH2()">Ex1</button>
+	
+	<button onclick="finMaxMinAVG()">Ex2</button>
+	
+	<button onclick="countChars()">Ex3</button>
+	
+	<button onclick="mulTable()">Ex4</button>
+	
+	<div id="sol">  </div>
+	
+	
+	<script>
+	function changeH2() 
+	{
+   var element = document.getElementById("par");
+   element.classList.toggle("mystyle");
+	}
+	
+	function finMaxMinAVG()
+	{
+	var size= parseInt (window.prompt( "Enter array size", "0" ));
+	var arr=new Array(size);
+	var sum=0,cnt=0;
+	var even=[];
+	for(var i=0;i<size;i++)
+	{
+	   
+	   arr[i]=parseInt(window.prompt("Enter "+(i+1)+" number:","0"));
+	   if(arr[i]%2==0)
+		even.push(arr[i])
+		else
+		{
+		cnt++;
+		sum+=arr[i];
+		}
+	   
+	}
+	    var len=even.length;
+		even.sort();
+		document.write("The min number between the even numbers is "+even[0]+" and the max number is "+even[len-1]+"<br>");
+		document.write("The average of the odd numbers is "+(sum/cnt));
+
+
+	
+
+	}
+	
+	
+	function countChars()
+	{
+	  var str= window.prompt( "Enter a string", "0" );
+	  var ch=window.prompt( "Enter a char", "0" );
+	  var len=str.length;
+	  var cnt=0;
+	  for(var i=0;i<len;i++)
+		if(str.charAt(i)==ch)
+			cnt++;
+			
+	document.write("The char \'"+ch+"\' appers "+cnt+" times in the word \'"+str+"\'");
+      	
+	
+	}
+
+	function mulTable()
+	{
+		document.write("<table border=1>");
+		var rows= parseInt (window.prompt( "Enter number of rows", "0" ));
+		var cols= parseInt (window.prompt( "Enter number of cols", "0" ));
+		var i=1, j=1;
+		
+		while(rows>=i)
+		{
+	    document.write("<tr>");
+		while(cols>=j)
+		{
+           document.write("<td>"+(i*j)+"</td>");
+		   j++;
+		}
+		j=1;
+	    document.write("</tr>");
+        i++;
+  }
+    document.write("</table>");
+  document.write("<style>table{background-color:yellow; border:2px solid blue;text-align:center;} tr{color:blue;}</style>");
+
+	}
+
+	
+	</script>
+	
+
+</body>
+
+
+</html>
